@@ -34,7 +34,7 @@ import junit.framework.TestCase;
 public class javaPractice extends TestCase {
 	public static void main(String args[]) throws InterruptedException
 	{
-		/*System.setProperty("webdriver.firefox.bin","E:/Program Files/Mozilla Firefox/firefox.exe"); 
+		System.setProperty("webdriver.firefox.bin","E:/Program Files/Mozilla Firefox/firefox.exe"); 
 		ProfilesIni allProfiles = new ProfilesIni();
 		FirefoxProfile profile = allProfiles.getProfile("default");
 		WebDriver driver = new FirefoxDriver(profile);
@@ -105,7 +105,7 @@ public class javaPractice extends TestCase {
 		//attribute.AttributeFun();
 		
 		//Css css=new Css();
-	    //css.CssFun();
+	        //css.CssFun();
 		
 		//Status status=new Status();
 		//status.StatusFun();
@@ -189,7 +189,7 @@ class SimpleLocate{
 		((JavascriptExecutor)driver).executeScript("$(arguments[0]).fadeOut().fadeIn",sameLink);
 		Thread.sleep(1000);
 		
-		//by css selector  ¶ÔÓÚÕâÖÖÑ¡ÔñÆ÷²»ÊÇºÜÀí½â
+		//by css selector  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½
 		WebElement div=driver.findElement(By.cssSelector(".controls"));
 		((JavascriptExecutor)driver).executeScript("$(arguments[0]).fadeOut().fadeIn",div);
 		Thread.sleep(1000);
@@ -221,17 +221,17 @@ class NewSimpleLocate{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//Ñ¡ÔñËùÓÐµÄcheckbox²¢È«²¿¹´ÉÏ
+		//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½checkboxï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		List<WebElement> checkboxes=driver1.findElements(By.cssSelector("input[type=checkbox]"));
 		for(WebElement checkbox : checkboxes){
 			checkbox.click();
 		}
 		driver1.navigate().refresh();
 		
-		//´òÓ¡µ±Ç°Ò³ÃæÓÐ¶àÉÙcheckbox
+		//ï¿½ï¿½Ó¡ï¿½ï¿½Ç°Ò³ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½checkbox
 		System.out.printf("%d \n", checkboxes.size());
 		
-		//Ñ¡ÔñÒ³ÃæÉÏËùÓÐµÄinput£¬È»ºó´ÓÖÐ¹ýÂË³öËùÓÐµÄcheckbox²¢¹´Ñ¡Ö®
+		//Ñ¡ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½inputï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Ðµï¿½checkboxï¿½ï¿½ï¿½ï¿½Ñ¡Ö®
 		List<WebElement> inputs=driver1.findElements(By.tagName("input"));
 		for(WebElement input : inputs)
 		{
@@ -241,7 +241,7 @@ class NewSimpleLocate{
 			}
 		}
 		
-		//°ÑÒ³Ãæ×îºóÒ»¸öcheckboxµÄ¹´È¥µô
+		//ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½checkboxï¿½Ä¹ï¿½È¥ï¿½ï¿½
 		 List<WebElement> allCheckboxes = driver1.findElements(By.cssSelector("input[type=checkbox]"));
          allCheckboxes.get(allCheckboxes.size() - 1).click();
          Thread.sleep(1000);
@@ -336,7 +336,7 @@ class ButtonGroup{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//¶¨Î»textÊÇsecondµÄ°´Å¥
+		//ï¿½ï¿½Î»textï¿½ï¿½secondï¿½Ä°ï¿½Å¥
 		List<WebElement> btns=driver1.findElement(By.className("btn-group")).findElements(By.className("btn"));
 		for(WebElement btn:btns)
 			if(btn.getText().equals("second"))
@@ -384,10 +384,10 @@ class Navs{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//1 ²ã¼¶¶¨Î»
+		//1 ï¿½ã¼¶ï¿½ï¿½Î»
 		//driver1.findElement(By.className("nav nav-pills")).findElement(By.linkText("About")).click();
 		
-		//2 Ö±½Ó¶¨Î»
+		//2 Ö±ï¿½Ó¶ï¿½Î»
 		driver1.findElement(By.linkText("About")).click();
 		
 		Thread.sleep(1000);
@@ -403,14 +403,14 @@ class Breadcrumb{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//»ñµÃ¸¸²ã¼¶
+		//ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ã¼¶
 		List<WebElement> ancestors=driver1.findElement(By.className("breadcrumb")).findElements(By.tagName("a"));
 		for(WebElement links : ancestors)
 		{ 
 			System.out.println(links.getText());
 			}
 		
-		//²ã¼¶¶¨Î»
+		//ï¿½ã¼¶ï¿½ï¿½Î»
 		WebElement current = driver1.findElement(By.className("breadcrumb")).findElement(By.className("active"));
         System.out.println(current.getText());
         
@@ -437,7 +437,7 @@ class Modal{
                 }
         );
 		
-		//ÓÃjsÀ´Ä£Äâclick
+		//ï¿½ï¿½jsï¿½ï¿½Ä£ï¿½ï¿½click
 		WebElement clickT=driver1.findElement(By.id("myModal")).findElement(By.id("click"));
 		((JavascriptExecutor)driver1).executeScript("$(arguments[0]).click()",clickT);
 		
@@ -456,10 +456,10 @@ class Attribute{
 		
 		WebElement link = driver1.findElement(By.id("tooltip"));
 		
-		//»ñµÃtooltipÄÚÈÝ   ¡ª¡ª²»Ì«Ã÷°×
+		//ï¿½ï¿½ï¿½ï¿½tooltipï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½ï¿½ï¿½
 		System.out.println(link.getAttribute("data-original-title"));
 		
-		//»ñÈ¡¸ÃÁ´½ÓµÄtext
+		//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½text
 		 System.out.println(link.getText());
 
          Thread.sleep(1000);
@@ -498,14 +498,14 @@ class Status{
 		WebElement textField=driver1.findElement(By.name("user"));
 		System.out.println(textField.isEnabled());
 		
-		//ÅÐ¶ÏButton×´Ì¬¡ª¡ª²»Ã÷°×
+		//ï¿½Ð¶ï¿½Button×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		 System.out.println(driver1.findElement(By.className("btn")).isEnabled());
 		 
-		 //Òþ²ØµôtextField  ÅÐ¶ÏÆäÊÇ·ñÏÔÊ¾
+		 //ï¿½ï¿½ï¿½Øµï¿½textField  ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ê¾
 		 ((JavascriptExecutor)driver1).executeScript("$(arguments[0]).hide()", textField);
          System.out.println(textField.isDisplayed());
          
-         //ÓÃclick·½·¨Ñ¡Ôñradio
+         //ï¿½ï¿½clickï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½radio
          WebElement radio=driver1.findElement(By.name("radio"));
          radio.click();
          System.out.println(radio.isSelected());
@@ -531,20 +531,20 @@ class Form1{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//Ñ¡ÖÐcheckbox
+		//Ñ¡ï¿½ï¿½checkbox
 		driver1.findElement(By.cssSelector("input[type=checkbox]")).click();
 		
-		//Ñ¡ÖÐradio
+		//Ñ¡ï¿½ï¿½radio
 		driver1.findElement(By.cssSelector("input[type=radio]")).click();
 		
-		//Ñ¡ÔñÏÂÀ­²Ëµ¥×îºóÒ»Ïî
+		//Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 		List<WebElement> options = driver1.findElement(By.tagName("select")).findElements(By.tagName("option"));
 		options.get(options.size()-1).click();
 		
-		//µã»÷Ìá½»°´Å¥
+		//ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½Å¥
 		driver1.findElement(By.cssSelector("input[type=submit]")).click();
 		
-		//»ñÈ¡alertÎÄ×Ö
+		//ï¿½ï¿½È¡alertï¿½ï¿½ï¿½ï¿½
 		Alert alert=driver1.switchTo().alert();
 		System.out.println(alert.getText());
 		alert.accept();
@@ -562,11 +562,11 @@ class JS{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//Ò³ÃæÖ±½ÓÖ´ÐÐJS
+		//Ò³ï¿½ï¿½Ö±ï¿½ï¿½Ö´ï¿½ï¿½JS
 		((JavascriptExecutor)driver1).executeScript("$('#tooltip').fadeOut");
 		Thread.sleep(1000);
 		
-		//ÔÚ¶¨Î»ÔªËØÉÏÖ´ÐÐjs
+		//ï¿½Ú¶ï¿½Î»Ôªï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½js
 		WebElement button=driver1.findElement(By.className("btn"));
 		((JavascriptExecutor)driver1).executeScript("$(arguments[0]).fadeOut();",button);
 		
@@ -601,7 +601,7 @@ class WaitExample{
 		OpenWebDriver openWebDriver=new OpenWebDriver(fileP);
 		WebDriver driver1=openWebDriver.OpenWebDriverFun();
 		
-		//Àí½â²»ÇåÎú
+		//ï¿½ï¿½ï¿½â²»ï¿½ï¿½ï¿½ï¿½
 		driver1.findElement(By.id("btn")).click();
 		(new WebDriverWait(driver1,10)).until(new ExpectedCondition<Boolean>(){
 			public Boolean apply(WebDriver d){
@@ -631,7 +631,7 @@ class Frame{
 		driver1.findElement(By.id("kw1")).sendKeys("watir-webdriver");
         Thread.sleep(1000);
         
-        //Ìø³öËùÓÐframe
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½frame
         driver1.switchTo().defaultContent();
         
         driver1.switchTo().frame("f1");
@@ -673,7 +673,7 @@ class Upload{
 class Others{
 	public void DownloadFun()
 	{
-		//driver = Selenium::WebDriver.for :chrome, :profile => profile  ¡ª¡ª???????
+		//driver = Selenium::WebDriver.for :chrome, :profile => profile  ï¿½ï¿½ï¿½ï¿½???????
 		//# for firefox
 		FirefoxProfile firefoxProfile=new FirefoxProfile();
 		firefoxProfile.setPreference("browser.download.folderList",2);
@@ -691,11 +691,11 @@ class Others{
 	public void timeOut()
 	{
 		 WebDriver driver = new FirefoxDriver();
-		 //Èç¹û3sÄÚ»¹¶¨Î»²»µ½ÔòÅ×³öÒì³£
+		 //ï¿½ï¿½ï¿½ï¿½3sï¿½Ú»ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×³ï¿½ï¿½ì³£
 		 driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-		 //Ò³Ãæ¼ÓÔØ³¬Ê±Ê±¼äÉèÖÃÎª5s
+		 //Ò³ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½Ê±Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª5s
 		 driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-		 //Òì²½½Å±¾µÄ³¬Ê±Ê±¼äÉèÖÃ³É3s 
+		 //ï¿½ì²½ï¿½Å±ï¿½ï¿½Ä³ï¿½Ê±Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ã³ï¿½3s 
 		 driver.manage().timeouts().setScriptTimeout(3, TimeUnit.SECONDS);
 	}
 }
