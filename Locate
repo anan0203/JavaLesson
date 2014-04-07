@@ -1,0 +1,55 @@
+package Lesson;
+
+
+import java.io.File;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class LocateCollection {
+	public static void main(String[] args){
+		WebDriver driver = new FirefoxDriver();
+		File file = new File("E:/Java/webdriver_location_colloction-master/webdriver_location_colloction-master/locator.html");
+		String filePath = "file:///" + file.getAbsolutePath();
+		driver.get(filePath);
+		
+		//locate id=name
+		driver.findElement(By.id("name")).sendKeys("This is id");
+		
+		//locate name=eason
+		driver.findElement(By.name("eason")).sendKeys("This is name");
+		
+		//locate class_name=han
+		driver.findElement(By.className("han")).sendKeys("This is class name");
+		
+		//locate by xpath
+		driver.findElement(By.xpath("//input[@id='for-xpath']")).sendKeys("This is xpath");
+		
+		//locate by css selector
+		driver.findElement(By.cssSelector("input[id='for-css']")).sendKeys("This is css");
+		
+		//locate by link
+		driver.findElement(By.linkText("easonhan.info")).click();
+		
+		//locate by css
+		driver.findElement(By.cssSelector("#for-css")).clear();
+		
+		//locate by tagname
+		List<WebElement> elems = driver.findElements(By.tagName("input"));
+		for(WebElement elem : elems){
+			if(elem.getAttribute("placeholder").equals("index=two"))
+				elem.sendKeys("Tagname");
+		}
+		
+		//disable one input
+		((JavascriptExecutor)driver).executeScript("$('#for-xpath').attr('disabled','disabled');");
+		
+		//input something in readonly element
+		((JavascriptExecutor)driver).executeScript("$('#readonly').removeAttr('readonly');");
+		driver.findElement(By.id("readonly")).sendKeys("readonly is removed");
+	}
+}
